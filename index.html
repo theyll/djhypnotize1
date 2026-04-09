@@ -3,35 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DJ Hypnotize | Inland Empire DJ Services</title>
-  <meta name="description" content="DJ Hypnotize - Professional DJ services for weddings, quinceañeras, corporate events, and private parties across the Inland Empire since 1984." />
+  <title>DJ Hypnotize | Premium Inland Empire DJ Services</title>
+  <meta name="description" content="DJ Hypnotize - Premium DJ services for weddings, quinceañeras, corporate events, and private parties across the Inland Empire since 1984." />
   <style>
     :root {
-      --bg: #0b0b14;
-      --bg-alt: #121225;
-      --card: rgba(19, 19, 38, 0.9);
-      --text: #f5f7ff;
-      --muted: #b6bdd6;
+      --bg: #080912;
+      --bg-alt: #101224;
+      --card: rgba(16, 18, 36, 0.88);
+      --card-2: rgba(20, 22, 42, 0.92);
+      --text: #f6f7ff;
+      --muted: #b7bfd9;
       --red: #ff3d5a;
       --purple: #8b5cf6;
       --blue: #3b82f6;
+      --cyan: #60a5fa;
       --border: rgba(255, 255, 255, 0.08);
-      --shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-      --radius: 20px;
-      --max: 1180px;
+      --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+      --radius: 22px;
+      --max: 1200px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at 15% 20%, rgba(255, 61, 90, 0.12), transparent 28%),
-        radial-gradient(circle at 85% 15%, rgba(139, 92, 246, 0.14), transparent 28%),
-        radial-gradient(circle at 50% 80%, rgba(59, 130, 246, 0.12), transparent 32%),
-        linear-gradient(180deg, #090912 0%, #0d1020 50%, #0a0b14 100%);
       color: var(--text);
       line-height: 1.6;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(255, 61, 90, 0.12), transparent 24%),
+        radial-gradient(circle at 85% 12%, rgba(139, 92, 246, 0.14), transparent 28%),
+        radial-gradient(circle at 50% 85%, rgba(59, 130, 246, 0.12), transparent 30%),
+        linear-gradient(180deg, #070810 0%, #0a0d18 45%, #080912 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.5), rgba(0,0,0,0));
+      z-index: 0;
     }
 
     a { color: inherit; text-decoration: none; }
@@ -40,14 +56,16 @@
     .container {
       width: min(100% - 2rem, var(--max));
       margin-inline: auto;
+      position: relative;
+      z-index: 1;
     }
 
     .nav {
       position: sticky;
       top: 0;
       z-index: 100;
-      backdrop-filter: blur(12px);
-      background: rgba(8, 10, 18, 0.72);
+      backdrop-filter: blur(14px);
+      background: rgba(7, 9, 16, 0.72);
       border-bottom: 1px solid var(--border);
     }
 
@@ -60,13 +78,14 @@
     }
 
     .brand {
-      font-weight: 800;
+      font-weight: 900;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       font-size: 1rem;
     }
 
-    .brand span {
+    .brand span,
+    .gradient-text {
       background: linear-gradient(90deg, var(--red), var(--purple), var(--blue));
       -webkit-background-clip: text;
       background-clip: text;
@@ -75,21 +94,22 @@
 
     .nav-links {
       display: flex;
-      gap: 1rem;
       flex-wrap: wrap;
-      font-size: 0.95rem;
+      gap: 1rem;
       color: var(--muted);
+      font-size: 0.95rem;
     }
 
     .nav-links a:hover { color: var(--text); }
 
     .hero {
-      padding: 5rem 0 3rem;
+      padding: 4.5rem 0 2.5rem;
+      position: relative;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 2rem;
       align-items: center;
     }
@@ -98,9 +118,9 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.45rem 0.8rem;
-      border: 1px solid rgba(139, 92, 246, 0.25);
+      padding: 0.45rem 0.85rem;
       border-radius: 999px;
+      border: 1px solid rgba(139, 92, 246, 0.25);
       background: rgba(139, 92, 246, 0.08);
       color: #d7c8ff;
       font-size: 0.85rem;
@@ -108,23 +128,16 @@
     }
 
     .hero h1 {
-      font-size: clamp(2.4rem, 5vw, 5rem);
-      line-height: 1.05;
+      font-size: clamp(2.5rem, 6vw, 5.3rem);
+      line-height: 1.02;
+      letter-spacing: -0.035em;
       margin-bottom: 1rem;
-      letter-spacing: -0.03em;
-    }
-
-    .gradient-text {
-      background: linear-gradient(90deg, var(--red), var(--purple), var(--blue));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
     }
 
     .hero p {
       color: var(--muted);
       font-size: 1.05rem;
-      max-width: 60ch;
+      max-width: 62ch;
       margin-bottom: 1.5rem;
     }
 
@@ -132,37 +145,51 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.9rem;
-      margin-bottom: 1.75rem;
+      margin-bottom: 1.6rem;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.9rem 1.25rem;
+      padding: 0.95rem 1.25rem;
       border-radius: 14px;
-      font-weight: 700;
+      font-weight: 800;
       border: 1px solid transparent;
-      transition: 0.2s ease;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
     }
+
+    .btn:hover { transform: translateY(-2px); }
 
     .btn-primary {
-      background: linear-gradient(90deg, var(--red), var(--purple));
       color: white;
-      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.25);
+      background: linear-gradient(90deg, var(--red), var(--purple));
+      box-shadow: 0 12px 30px rgba(139, 92, 246, 0.24);
     }
 
-    .btn-primary:hover { transform: translateY(-2px); }
-
     .btn-secondary {
-      background: rgba(255, 255, 255, 0.03);
+      background: rgba(255,255,255,0.03);
       border-color: var(--border);
       color: var(--text);
     }
 
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.06);
-      transform: translateY(-2px);
+    .btn-secondary:hover { background: rgba(255,255,255,0.06); }
+
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .pill {
+      padding: 0.55rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.85rem;
     }
 
     .hero-stats {
@@ -172,95 +199,157 @@
     }
 
     .stat {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border);
-      border-radius: 16px;
       padding: 1rem;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
     }
 
     .stat strong {
       display: block;
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       margin-bottom: 0.15rem;
     }
 
-    .stat span {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
+    .stat span { color: var(--muted); font-size: 0.9rem; }
 
-    .hero-card {
-      background: linear-gradient(180deg, rgba(18, 18, 37, 0.95), rgba(10, 11, 20, 0.95));
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      padding: 1.5rem;
-      box-shadow: var(--shadow);
+    .visual-card {
       position: relative;
-      overflow: hidden;
-    }
-
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      inset: -20% auto auto -20%;
-      width: 180px;
-      height: 180px;
-      background: radial-gradient(circle, rgba(255, 61, 90, 0.18), transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-card::after {
-      content: "";
-      position: absolute;
-      right: -30px;
-      bottom: -30px;
-      width: 180px;
-      height: 180px;
-      background: radial-gradient(circle, rgba(59, 130, 246, 0.16), transparent 70%);
-      pointer-events: none;
-    }
-
-    .mini-label {
-      color: #d1d8f4;
-      font-size: 0.85rem;
-      margin-bottom: 0.6rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .mix-card {
-      background: rgba(255, 255, 255, 0.03);
+      border-radius: 28px;
+      padding: 1.4rem;
+      background: linear-gradient(180deg, rgba(16,18,36,0.95), rgba(9,10,20,0.95));
       border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 1.1rem;
-      margin-top: 1rem;
-    }
-
-    .mix-line {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 0.8rem;
-      font-size: 0.95rem;
-    }
-
-    .mix-bar {
-      height: 10px;
-      background: rgba(255,255,255,0.06);
-      border-radius: 999px;
+      box-shadow: var(--shadow);
       overflow: hidden;
-      margin-bottom: 0.8rem;
+      min-height: 500px;
     }
 
-    .mix-fill {
-      height: 100%;
+    .visual-card::before,
+    .visual-card::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(10px);
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .visual-card::before {
+      width: 180px;
+      height: 180px;
+      top: -40px;
+      right: -40px;
+      background: radial-gradient(circle, rgba(139,92,246,0.3), transparent 65%);
+    }
+
+    .visual-card::after {
+      width: 180px;
+      height: 180px;
+      bottom: -50px;
+      left: -50px;
+      background: radial-gradient(circle, rgba(255,61,90,0.22), transparent 65%);
+    }
+
+    .deck {
+      position: relative;
+      height: 210px;
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at 30% 50%, rgba(255,255,255,0.03), transparent 45%),
+        radial-gradient(circle at 70% 50%, rgba(255,255,255,0.03), transparent 45%),
+        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+      border: 1px solid var(--border);
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .turntable {
+      position: absolute;
+      top: 50%;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      border: 2px solid rgba(255,255,255,0.06);
+      background:
+        radial-gradient(circle, rgba(255,255,255,0.08) 0 10%, rgba(255,255,255,0.02) 11% 20%, rgba(255,255,255,0.06) 21% 22%, rgba(255,255,255,0.02) 23% 48%, rgba(255,255,255,0.06) 49% 50%, rgba(255,255,255,0.02) 51% 100%);
+      animation: spin 6s linear infinite;
+    }
+
+    .turntable.left { left: 30px; }
+    .turntable.right { right: 30px; animation-duration: 5s; }
+
+    .mixer {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 90px;
+      height: 150px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+    }
+
+    .mixer::before,
+    .mixer::after {
+      content: "";
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      height: 6px;
       border-radius: 999px;
       background: linear-gradient(90deg, var(--red), var(--purple), var(--blue));
+      box-shadow: 0 0 14px rgba(139,92,246,0.4);
     }
 
-    section {
-      padding: 2rem 0 4rem;
+    .mixer::before { top: 42px; }
+    .mixer::after { top: 92px; }
+
+    .eq {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 0.35rem;
+      align-items: end;
+      height: 90px;
+      margin: 1rem 0 1.1rem;
     }
+
+    .bar {
+      border-radius: 999px 999px 6px 6px;
+      background: linear-gradient(180deg, var(--blue), var(--purple), var(--red));
+      animation: bounce 1.6s ease-in-out infinite;
+      min-height: 18px;
+    }
+
+    .bar:nth-child(2) { animation-delay: .1s; }
+    .bar:nth-child(3) { animation-delay: .2s; }
+    .bar:nth-child(4) { animation-delay: .3s; }
+    .bar:nth-child(5) { animation-delay: .4s; }
+    .bar:nth-child(6) { animation-delay: .5s; }
+    .bar:nth-child(7) { animation-delay: .6s; }
+    .bar:nth-child(8) { animation-delay: .7s; }
+    .bar:nth-child(9) { animation-delay: .8s; }
+    .bar:nth-child(10) { animation-delay: .9s; }
+    .bar:nth-child(11) { animation-delay: 1s; }
+    .bar:nth-child(12) { animation-delay: 1.1s; }
+
+    .mini-panel {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .mini-card {
+      padding: 1rem;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+    }
+
+    .mini-card h3 { margin-bottom: 0.35rem; font-size: 1rem; }
+    .mini-card p { color: var(--muted); font-size: 0.92rem; }
+
+    section { padding: 2rem 0 4rem; position: relative; z-index: 1; }
 
     .section-head {
       margin-bottom: 1.5rem;
@@ -273,20 +362,12 @@
 
     .section-head p {
       color: var(--muted);
-      max-width: 60ch;
+      max-width: 65ch;
     }
 
-    .grid-4 {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-    }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
 
     .card {
       background: var(--card);
@@ -299,7 +380,10 @@
     .service-card h3,
     .package-card h3,
     .about-card h3,
-    .contact-card h3 {
+    .contact-card h3,
+    .genre-card h3,
+    .testimonial-card h3,
+    .photo-card h3 {
       margin-bottom: 0.5rem;
       font-size: 1.15rem;
     }
@@ -308,7 +392,12 @@
     .package-card p,
     .about-card p,
     .contact-card p,
-    .package-card li {
+    .genre-card p,
+    .testimonial-card p,
+    .photo-card p,
+    .package-card li,
+    .about-card li,
+    .contact-card li {
       color: var(--muted);
       font-size: 0.95rem;
     }
@@ -319,17 +408,18 @@
       padding: 0.35rem 0.65rem;
       border-radius: 999px;
       font-size: 0.75rem;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 0.03em;
       background: rgba(59, 130, 246, 0.1);
-      color: #bcd4ff;
-      border: 1px solid rgba(59, 130, 246, 0.2);
+      color: #bdd5ff;
+      border: 1px solid rgba(59, 130, 246, 0.18);
     }
 
     .package-card.featured {
+      position: relative;
       border-color: rgba(139, 92, 246, 0.35);
       transform: translateY(-4px);
-      position: relative;
+      background: linear-gradient(180deg, rgba(20, 22, 42, 0.95), rgba(12, 14, 28, 0.95));
     }
 
     .featured-tag {
@@ -337,38 +427,33 @@
       top: 1rem;
       right: 1rem;
       font-size: 0.72rem;
-      font-weight: 800;
+      font-weight: 900;
       padding: 0.3rem 0.6rem;
       border-radius: 999px;
       background: linear-gradient(90deg, var(--red), var(--purple));
     }
 
-    .price {
-      font-size: 2rem;
-      font-weight: 800;
-      margin: 0.5rem 0 0.75rem;
-    }
-
-    .price small {
-      font-size: 0.9rem;
-      color: var(--muted);
-      font-weight: 600;
+    .quote-label {
+      display: inline-block;
+      margin: 0.65rem 0 0.9rem;
+      padding: 0.45rem 0.7rem;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-weight: 700;
+      font-size: 0.92rem;
     }
 
     ul.clean {
       list-style: none;
       display: grid;
       gap: 0.55rem;
-      margin: 1rem 0 1.25rem;
+      margin: 0.9rem 0 1.15rem;
     }
 
-    .divider {
-      height: 1px;
-      background: var(--border);
-      margin: 1rem 0;
-    }
-
-    .about-layout {
+    .about-layout,
+    .contact-layout {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
       gap: 1.25rem;
@@ -381,21 +466,43 @@
     }
 
     .timeline-item {
-      padding: 0.9rem 1rem;
+      padding: 0.95rem 1rem;
       border-radius: 16px;
-      background: rgba(255, 255, 255, 0.03);
+      background: rgba(255,255,255,0.03);
       border: 1px solid var(--border);
     }
 
-    .timeline-item strong {
-      display: block;
-      margin-bottom: 0.2rem;
+    .timeline-item strong { display: block; margin-bottom: 0.2rem; }
+
+    .genre-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.8rem;
     }
 
-    .contact-layout {
+    .genre-tag {
+      padding: 0.5rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .photo-frame {
+      height: 300px;
+      border-radius: 22px;
+      border: 1px dashed rgba(255,255,255,0.14);
+      background:
+        radial-gradient(circle at 50% 35%, rgba(139,92,246,0.12), transparent 25%),
+        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
+      place-items: center;
+      text-align: center;
+      padding: 1rem;
+      color: var(--muted);
+      font-size: 0.95rem;
     }
 
     .contact-list {
@@ -410,14 +517,47 @@
       border-radius: 14px;
       background: rgba(255,255,255,0.03);
       border: 1px solid var(--border);
-      color: var(--muted);
     }
+
+    .steps {
+      display: grid;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .step {
+      padding: 0.9rem 1rem;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+    }
+
+    .step strong { display: block; margin-bottom: 0.2rem; }
 
     .footer {
       padding: 2rem 0 3rem;
+      border-top: 1px solid var(--border);
       color: var(--muted);
       font-size: 0.9rem;
-      border-top: 1px solid var(--border);
+      position: relative;
+      z-index: 1;
+    }
+
+    .floating-cta {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 999;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.9rem 1rem;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--red), var(--purple));
+      color: white;
+      font-weight: 800;
+      box-shadow: 0 16px 30px rgba(139,92,246,0.35);
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
     .note {
@@ -426,12 +566,23 @@
       margin-top: 0.75rem;
     }
 
-    @media (max-width: 980px) {
+    @keyframes spin {
+      from { transform: translateY(-50%) rotate(0deg); }
+      to { transform: translateY(-50%) rotate(360deg); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: scaleY(0.5); opacity: 0.8; }
+      50% { transform: scaleY(1); opacity: 1; }
+    }
+
+    @media (max-width: 1040px) {
       .hero-grid,
       .about-layout,
       .contact-layout,
       .grid-4,
-      .grid-3 {
+      .grid-3,
+      .grid-2 {
         grid-template-columns: 1fr;
       }
 
@@ -439,9 +590,7 @@
         grid-template-columns: 1fr;
       }
 
-      .hero {
-        padding-top: 3rem;
-      }
+      .visual-card { min-height: auto; }
     }
 
     @media (max-width: 640px) {
@@ -450,16 +599,37 @@
         align-items: flex-start;
       }
 
-      .hero h1 {
-        font-size: clamp(2rem, 10vw, 3rem);
+      .hero {
+        padding-top: 3rem;
       }
 
-      .btn {
-        width: 100%;
+      .hero h1 {
+        font-size: clamp(2rem, 11vw, 3.1rem);
       }
 
       .hero-actions {
         flex-direction: column;
+      }
+
+      .btn { width: 100%; }
+
+      .turntable {
+        width: 95px;
+        height: 95px;
+      }
+
+      .turntable.left { left: 18px; }
+      .turntable.right { right: 18px; }
+
+      .mixer {
+        width: 72px;
+        height: 130px;
+      }
+
+      .floating-cta {
+        left: 12px;
+        right: 12px;
+        justify-content: center;
       }
     }
   </style>
@@ -471,8 +641,9 @@
       <nav class="nav-links">
         <a href="#services">Services</a>
         <a href="#packages">Packages</a>
+        <a href="#genres">Music</a>
         <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact">Book</a>
       </nav>
     </div>
   </header>
@@ -481,49 +652,71 @@
     <section class="hero" id="home">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Serving the Inland Empire • DJing since 1984</div>
-          <h1>Professional event energy with a <span class="gradient-text">timeless party vibe</span>.</h1>
+          <div class="eyebrow">Serving the Inland Empire • DJing Since 1984</div>
+          <h1>Elevate your event with a <span class="gradient-text">premium DJ experience</span>.</h1>
           <p>
-            DJ Hypnotize brings decades of experience, crowd reading, and clean transitions to weddings, quinceañeras, corporate events, birthdays, and private parties across the Inland Empire. Modern sound, classic professionalism, unforgettable dance floors.
+            DJ Hypnotize delivers polished event flow, crowd-focused music selection, and unforgettable dance floor energy for weddings, quinceañeras, corporate functions, birthdays, anniversaries, and private parties throughout the Inland Empire and surrounding Southern California.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">Book Your Date</a>
-            <a class="btn btn-secondary" href="#packages">View Packages</a>
+            <a class="btn btn-primary" href="#contact">Request a Quote</a>
+            <a class="btn btn-secondary" href="#packages">Explore Packages</a>
           </div>
+
+          <div class="hero-points">
+            <span class="pill">Professional MC Support</span>
+            <span class="pill">Custom Event Planning</span>
+            <span class="pill">Dance Floor Lighting</span>
+            <span class="pill">Weddings • Quinceañeras • Corporate</span>
+          </div>
+
           <div class="hero-stats">
             <div class="stat">
               <strong>40+ Years</strong>
               <span>Experience behind the decks</span>
             </div>
             <div class="stat">
-              <strong>Weddings to Corporate</strong>
-              <span>Flexible event coverage</span>
+              <strong>Elegant to High-Energy</strong>
+              <span>Flexible event style coverage</span>
             </div>
             <div class="stat">
-              <strong>Inland Empire</strong>
+              <strong>Inland Empire Based</strong>
               <span>Local, reliable, and event-ready</span>
             </div>
           </div>
         </div>
 
-        <div class="hero-card">
-          <div class="mini-label">Now Booking</div>
-          <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Signature Event Experience</h3>
-          <p style="color: var(--muted);">
-            Clean setup, dynamic playlists, emcee support, and a polished sound system tailored to your celebration.
-          </p>
-
-          <div class="mix-card">
-            <div class="mix-line"><span>Dance Floor Energy</span><strong>95%</strong></div>
-            <div class="mix-bar"><div class="mix-fill" style="width:95%"></div></div>
-            <div class="mix-line"><span>Professional MC Flow</span><strong>88%</strong></div>
-            <div class="mix-bar"><div class="mix-fill" style="width:88%"></div></div>
-            <div class="mix-line"><span>Custom Playlist Matching</span><strong>92%</strong></div>
-            <div class="mix-bar"><div class="mix-fill" style="width:92%"></div></div>
+        <div class="visual-card">
+          <div class="deck">
+            <div class="turntable left"></div>
+            <div class="turntable right"></div>
+            <div class="mixer"></div>
           </div>
 
-          <div class="divider"></div>
-          <p class="note">Perfect for weddings, quinceañeras, corporate events, birthdays, anniversaries, school dances, and private celebrations.</p>
+          <div class="eq">
+            <div class="bar" style="height:35%"></div>
+            <div class="bar" style="height:75%"></div>
+            <div class="bar" style="height:55%"></div>
+            <div class="bar" style="height:90%"></div>
+            <div class="bar" style="height:45%"></div>
+            <div class="bar" style="height:82%"></div>
+            <div class="bar" style="height:62%"></div>
+            <div class="bar" style="height:88%"></div>
+            <div class="bar" style="height:52%"></div>
+            <div class="bar" style="height:78%"></div>
+            <div class="bar" style="height:58%"></div>
+            <div class="bar" style="height:95%"></div>
+          </div>
+
+          <div class="mini-panel">
+            <div class="mini-card">
+              <h3>Premium Event Flow</h3>
+              <p>From ceremony moments and grand entrances to packed dance floors, every transition is designed to feel smooth, intentional, and memorable.</p>
+            </div>
+            <div class="mini-card">
+              <h3>Built for Real Celebrations</h3>
+              <p>Perfect for weddings, quinceañeras, corporate functions, birthdays, anniversaries, school events, and private parties of all sizes.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -532,32 +725,32 @@
       <div class="container">
         <div class="section-head">
           <h2>Events & Services</h2>
-          <p>Flexible DJ entertainment built around your crowd, your timeline, and your vibe.</p>
+          <p>Tailored entertainment built around your timeline, your guests, and the kind of energy you want your event to have.</p>
         </div>
 
         <div class="grid-4">
           <div class="card service-card">
-            <span class="badge">Wedding DJ</span>
+            <span class="badge">Elegant & Memorable</span>
             <h3>Weddings</h3>
-            <p>Ceremony, cocktail hour, reception music, key moment coordination, and emcee support for a smooth and memorable celebration.</p>
+            <p>Ceremony music, cocktail hour ambiance, reception transitions, introductions, special dances, and a celebration that flows beautifully from start to finish.</p>
           </div>
 
           <div class="card service-card">
-            <span class="badge">Celebration Specialist</span>
+            <span class="badge">Family Tradition + Party Energy</span>
             <h3>Quinceañeras</h3>
-            <p>Grand entrances, traditional moments, family dance transitions, and high-energy party sets that keep the floor packed.</p>
+            <p>Grand entrances, traditional moments, family dances, custom song coordination, and a high-energy party mix for an unforgettable night.</p>
           </div>
 
           <div class="card service-card">
-            <span class="badge">Professional Events</span>
+            <span class="badge">Polished & Professional</span>
             <h3>Corporate Events</h3>
-            <p>Holiday parties, company celebrations, mixers, and branded events with polished audio and professional presentation.</p>
+            <p>Holiday parties, company celebrations, mixers, award nights, and branded events with clean presentation and professional audio support.</p>
           </div>
 
           <div class="card service-card">
             <span class="badge">All Occasion</span>
             <h3>Private Parties</h3>
-            <p>Birthdays, anniversaries, reunions, school dances, backyard parties, and special occasions customized to your crowd.</p>
+            <p>Birthdays, anniversaries, reunions, school dances, backyard events, and special celebrations customized to your crowd and style.</p>
           </div>
         </div>
       </div>
@@ -566,56 +759,96 @@
     <section id="packages">
       <div class="container">
         <div class="section-head">
-          <h2>Packages</h2>
-          <p>Simple starting package ideas. You can update pricing, hours, and inclusions later based on what you want to charge.</p>
+          <h2>Package Options</h2>
+          <p>No public pricing — because every event is different. Get a custom quote based on your date, location, event type, guest count, and coverage needs.</p>
         </div>
 
         <div class="grid-3">
           <div class="card package-card">
-            <h3>Essential Mix</h3>
-            <p>Perfect for smaller parties and straightforward events.</p>
-            <div class="price">$599 <small>starting</small></div>
+            <h3>Wedding Experience</h3>
+            <p>Designed for couples who want smooth coordination, elegant flow, and a celebration that builds into a packed dance floor.</p>
+            <div class="quote-label">Custom Quote</div>
             <ul class="clean">
-              <li>✔ Up to 4 hours of DJ service</li>
-              <li>✔ Standard sound system setup</li>
-              <li>✔ Curated playlist planning</li>
-              <li>✔ Basic announcements / emcee support</li>
+              <li>✔ Ceremony, cocktail hour & reception coverage</li>
+              <li>✔ Timeline coordination & key moment support</li>
+              <li>✔ Professional MC / announcement assistance</li>
+              <li>✔ Personalized music planning</li>
+              <li>✔ Sound system + dance floor setup</li>
             </ul>
-            <a class="btn btn-secondary" href="#contact">Ask About Availability</a>
+            <a class="btn btn-secondary" href="#contact">Request Wedding Quote</a>
           </div>
 
           <div class="card package-card featured">
             <span class="featured-tag">Most Popular</span>
-            <h3>Signature Hype</h3>
-            <p>Best fit for weddings, quinceañeras, and high-energy celebrations.</p>
-            <div class="price">$999 <small>starting</small></div>
+            <h3>Quinceañera Celebration</h3>
+            <p>Built for traditional moments, family coordination, and an unforgettable party atmosphere once the formalities are complete.</p>
+            <div class="quote-label">Custom Quote</div>
             <ul class="clean">
-              <li>✔ Up to 6 hours of DJ service</li>
-              <li>✔ Enhanced sound system setup</li>
-              <li>✔ Full event timeline coordination</li>
-              <li>✔ Custom music planning</li>
-              <li>✔ Emcee / hosting support</li>
-              <li>✔ Dance floor lighting</li>
+              <li>✔ Grand entrance & special dance coordination</li>
+              <li>✔ Traditional moment music planning</li>
+              <li>✔ MC support for key announcements</li>
+              <li>✔ Dance floor lighting & party energy set</li>
+              <li>✔ Flexible mix for family and younger guests</li>
             </ul>
-            <a class="btn btn-primary" href="#contact">Book the Signature Package</a>
+            <a class="btn btn-primary" href="#contact">Request Quinceañera Quote</a>
           </div>
 
           <div class="card package-card">
-            <h3>All Night Experience</h3>
-            <p>For larger events that need maximum coverage and a premium setup.</p>
-            <div class="price">$1,499 <small>starting</small></div>
+            <h3>Private / Corporate Event</h3>
+            <p>Ideal for birthdays, anniversaries, company parties, reunions, mixers, and custom celebrations needing a clean, polished DJ setup.</p>
+            <div class="quote-label">Custom Quote</div>
             <ul class="clean">
-              <li>✔ Up to 8 hours of DJ service</li>
-              <li>✔ Premium sound & lighting package</li>
-              <li>✔ Multi-segment event coverage</li>
-              <li>✔ Advanced emcee coordination</li>
-              <li>✔ Personalized event planning consult</li>
+              <li>✔ Flexible coverage based on event format</li>
+              <li>✔ Professional sound & optional lighting</li>
+              <li>✔ Crowd-appropriate playlist curation</li>
+              <li>✔ Emcee support available as needed</li>
+              <li>✔ Scalable for intimate or larger events</li>
             </ul>
-            <a class="btn btn-secondary" href="#contact">Request a Quote</a>
+            <a class="btn btn-secondary" href="#contact">Request Event Quote</a>
           </div>
         </div>
 
-        <p class="note">Tip: You can easily change these prices later. If you don’t want pricing shown publicly, replace the dollar amounts with “Custom Quote.”</p>
+        <p class="note">Tip: If you later want, I can add an optional “Starting at…” line for each package while still keeping it premium-looking.</p>
+      </div>
+    </section>
+
+    <section id="genres">
+      <div class="container">
+        <div class="section-head">
+          <h2>Music Styles & Crowd Vibes</h2>
+          <p>A versatile, crowd-aware approach that can blend generations, cultures, and energy levels throughout the night.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card genre-card">
+            <h3>Popular Genres</h3>
+            <p>DJ Hypnotize can build around your preferences and crowd mix, from elegant background moments to all-out party mode.</p>
+            <div class="genre-tags">
+              <span class="genre-tag">Old School</span>
+              <span class="genre-tag">Freestyle</span>
+              <span class="genre-tag">Hip-Hop</span>
+              <span class="genre-tag">R&B</span>
+              <span class="genre-tag">Top 40</span>
+              <span class="genre-tag">Latin Hits</span>
+              <span class="genre-tag">Cumbia</span>
+              <span class="genre-tag">Dance / Party Classics</span>
+              <span class="genre-tag">Throwbacks</span>
+              <span class="genre-tag">Custom Requests</span>
+            </div>
+          </div>
+
+          <div class="card genre-card">
+            <h3>How the Night Is Built</h3>
+            <p>Every great event has phases. The music is shaped to match the mood and keep the experience feeling intentional.</p>
+            <ul class="clean">
+              <li>✔ Guest arrival / cocktail atmosphere</li>
+              <li>✔ Formal moments & announcements</li>
+              <li>✔ Dinner-friendly background flow</li>
+              <li>✔ Family-friendly transition sets</li>
+              <li>✔ Peak dance floor energy later in the night</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -623,27 +856,27 @@
       <div class="container">
         <div class="section-head">
           <h2>Meet DJ Hypnotize</h2>
-          <p>A seasoned Inland Empire DJ bringing old-school experience with a modern event feel.</p>
+          <p>A seasoned Inland Empire DJ blending old-school experience with a modern, polished event feel.</p>
         </div>
 
         <div class="about-layout">
           <div class="card about-card">
             <h3>About the DJ</h3>
             <p>
-              Known as <strong>DJ Hypnotize</strong>, he has been spinning since <strong>1984</strong> and has built a reputation for reading the room, blending eras, and creating the right energy for every type of crowd. From elegant weddings to lively quinceañeras and polished corporate events, the goal is always the same: keep the event flowing and make the night unforgettable.
+              Known as <strong>DJ Hypnotize</strong>, he has been spinning since <strong>1984</strong> and has built a reputation for reading the room, blending eras, and delivering the right energy for every type of crowd. From elegant weddings to lively quinceañeras and polished corporate events, the goal stays the same: make the event feel smooth, elevated, and unforgettable.
             </p>
             <div class="timeline">
               <div class="timeline-item">
                 <strong>Since 1984</strong>
-                Decades of experience across multiple music eras and event styles.
+                Decades of live event experience across multiple generations of music and party styles.
               </div>
               <div class="timeline-item">
                 <strong>Based in the Inland Empire</strong>
-                Local coverage for Inland Empire and surrounding Southern California events.
+                Serving Inland Empire and surrounding Southern California communities with dependable local coverage.
               </div>
               <div class="timeline-item">
-                <strong>Event-First Approach</strong>
-                Focused on professionalism, smooth coordination, and packed dance floors.
+                <strong>Professional + Crowd-Smart</strong>
+                Focused on communication, timing, transitions, and knowing when to shift the room’s energy.
               </div>
             </div>
           </div>
@@ -651,14 +884,72 @@
           <div class="card about-card">
             <h3>Why Clients Book</h3>
             <ul class="clean">
-              <li>✔ Experienced with formal and family event traditions</li>
-              <li>✔ Comfortable as both DJ and event emcee</li>
-              <li>✔ Can blend old school, throwbacks, Latin favorites, party hits, and current crowd-pleasers</li>
-              <li>✔ Reliable communication before and during the event</li>
-              <li>✔ Flexible package options for different budgets</li>
+              <li>✔ Comfortable handling both DJ and emcee responsibilities</li>
+              <li>✔ Strong with family event traditions and formal event timing</li>
+              <li>✔ Able to blend old school, Latin favorites, throwbacks, party classics, and current hits</li>
+              <li>✔ Reliable pre-event communication and planning</li>
+              <li>✔ Flexible package structure instead of one-size-fits-all pricing</li>
             </ul>
-            <div class="divider"></div>
-            <p class="note">You can later add a real photo, client testimonials, sample playlists, or social proof if you want — but this page already works well as a standalone professional site.</p>
+            <p class="note">This is a strong professional setup even without social media. If you want, you can later add a real event photo, reviews, or sample mixes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="photos">
+      <div class="container">
+        <div class="section-head">
+          <h2>Featured Photo Area</h2>
+          <p>This section is ready for a real DJ photo, event setup image, or logo whenever you’re ready to add one.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card photo-card">
+            <h3>DJ / Setup Photo Placeholder</h3>
+            <div class="photo-frame">
+              <div>
+                <strong style="display:block; color: var(--text); margin-bottom: 0.35rem;">Add Your Real Photo Here Later</strong>
+                Replace this area with a picture of DJ Hypnotize, a booth setup, lighting rig, or an event crowd shot.
+              </div>
+            </div>
+          </div>
+
+          <div class="card photo-card">
+            <h3>Best Photo Ideas</h3>
+            <ul class="clean">
+              <li>✔ DJ standing behind the booth with lighting on</li>
+              <li>✔ Elegant wedding reception setup</li>
+              <li>✔ Quinceañera dance floor moment</li>
+              <li>✔ Branded corporate event setup</li>
+              <li>✔ Clean logo graphic for a premium look</li>
+            </ul>
+            <p class="note">If you send me a photo later, I can place it directly into the website for you and make it look clean.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials">
+      <div class="container">
+        <div class="section-head">
+          <h2>Client Review Section</h2>
+          <p>I added polished placeholder testimonials so the page looks complete now. Replace these later with real ones.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card testimonial-card">
+            <h3>Wedding Client</h3>
+            <p>“DJ Hypnotize kept our reception flowing perfectly and knew exactly when to turn the energy up. Our guests stayed on the dance floor all night.”</p>
+          </div>
+
+          <div class="card testimonial-card">
+            <h3>Quinceañera Family</h3>
+            <p>“He handled the formal moments so smoothly and then completely transformed the room once it was time to party. Everyone had a great time.”</p>
+          </div>
+
+          <div class="card testimonial-card">
+            <h3>Corporate Event Organizer</h3>
+            <p>“Professional, on time, easy to work with, and a great feel for the crowd. Exactly what we wanted for our company event.”</p>
           </div>
         </div>
       </div>
@@ -667,31 +958,40 @@
     <section id="contact">
       <div class="container">
         <div class="section-head">
-          <h2>Book Your Event</h2>
-          <p>Ready to lock in your date? Replace the placeholders below with your real contact details.</p>
+          <h2>Book DJ Hypnotize</h2>
+          <p>Let’s lock in your date. Replace the placeholders below with your real phone number, email, and preferred booking method.</p>
         </div>
 
         <div class="contact-layout">
           <div class="card contact-card">
-            <h3>Contact Info</h3>
-            <p>Update this section with the real phone number, email, and preferred booking method.</p>
+            <h3>Contact Information</h3>
+            <p>Update these placeholders before publishing your final version.</p>
             <ul class="contact-list">
               <li><strong>Phone:</strong> (555) 123-4567</li>
               <li><strong>Email:</strong> bookdjhypnotize@email.com</li>
               <li><strong>Service Area:</strong> Inland Empire & surrounding Southern California</li>
-              <li><strong>Availability:</strong> Weddings, quinceañeras, corporate events, birthdays, and private parties</li>
+              <li><strong>Events:</strong> Weddings, quinceañeras, corporate events, birthdays, anniversaries, and private parties</li>
             </ul>
           </div>
 
           <div class="card contact-card">
-            <h3>Quick Booking Message</h3>
-            <p>Copy this into your email or text replies:</p>
-            <div class="mix-card">
-              <p style="color: var(--text); font-size: 0.95rem;">
-                Hi DJ Hypnotize, I’m interested in booking for my event. The date is [Event Date], the location is [Venue/City], and the event type is [Wedding / Quinceañera / Corporate / Party]. Please let me know your availability and package options.
-              </p>
+            <h3>Easy Booking Flow</h3>
+            <p>This is a better business-style flow than public pricing.</p>
+            <div class="steps">
+              <div class="step">
+                <strong>1) Send Your Event Details</strong>
+                Share your event date, venue/city, event type, and approximate guest count.
+              </div>
+              <div class="step">
+                <strong>2) Receive a Custom Quote</strong>
+                Pricing is based on event type, hours, setup needs, and travel.
+              </div>
+              <div class="step">
+                <strong>3) Lock In Your Date</strong>
+                Once details are confirmed, reserve your date and begin music planning.
+              </div>
             </div>
-            <p class="note">If you want, I can also turn this into a real contact form later (free options available).</p>
+            <p class="note">Want a real contact form next? I can add a free working form option that still works on GitHub Pages.</p>
           </div>
         </div>
       </div>
@@ -703,6 +1003,8 @@
       <p>© <span id="year"></span> DJ Hypnotize • Inland Empire DJ Services • Since 1984</p>
     </div>
   </footer>
+
+  <a class="floating-cta" href="#contact">📞 Request a Quote</a>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
